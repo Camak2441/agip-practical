@@ -2,8 +2,11 @@
   description = "";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    additionalPythonPackages.url = "github:Camak2441/additional-python-packages";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    additionalPythonPackages = {
+      url = "github:Camak2441/additional-python-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
